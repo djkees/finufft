@@ -7,6 +7,8 @@ on:
 
   # On tag push
   push:
+    branches:
+      - test-setup-fortran-beta15
     tags:
       - 'v*'
   # Manual trigger (with an optional deploy toggle)
@@ -35,7 +37,7 @@ jobs:
         # This action also sets FC, and typically CC/CXX to compatible compilers.
       - name: Setup Fortran
         id: setup-fortran
-        uses: fortran-lang/setup-fortran@v1
+        uses: fortran-lang/setup-fortran@v2.0.0-beta.15
         with:
           compiler: gcc
           version: 15
